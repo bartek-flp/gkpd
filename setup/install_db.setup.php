@@ -707,14 +707,14 @@ if ($setup_free_access == TRUE) {
 
     $sql = "
 		CREATE TABLE IF NOT EXISTS `$judging_scores_db_table` (
-			`id` int(11) NOT NULL,
+			`id` int(11) NOT NULL AUTO_INCREMENT,
 			`eid` int(11) DEFAULT NULL COMMENT 'entry id from brewing table',
 			`bid` int(11) DEFAULT NULL COMMENT 'brewer id from brewer table',
 			`scoreTable` int(11) DEFAULT NULL COMMENT 'id of table from judging_tables table',
-			`scoreEntry` float DEFAULT NULL COMMENT 'Numerical score assigned by judges',
-			`scorePlace` int(11) DEFAULT NULL COMMENT 'place of entry as assigned by judges',
-			`scoreType` char(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-			`scoreMiniBOS` tinyint(1) DEFAULT NULL COMMENT 'Did the entry go to the MiniBOS? 1=Yes, 0=No',
+			`scoreEntry` float DEFAULT NULL COMMENT 'numerical score assigned by judges',
+			`scorePlace` float DEFAULT NULL COMMENT 'place of entry as assigned by judges',
+			`scoreType` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT 'type of entry used for custom styles',
+			`scoreMiniBOS` int(4) DEFAULT NULL COMMENT 'Did the entry go to the MiniBOS? 1=Yes, 0=No',
 			PRIMARY KEY (`id`)
 		) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 		";
@@ -733,12 +733,12 @@ if ($setup_free_access == TRUE) {
 
     $sql = "
 		CREATE TABLE IF NOT EXISTS `$judging_scores_bos_db_table` (
-			`id` int(11) NOT NULL,
+			`id` int(11) NOT NULL AUTO_INCREMENT,
 			`eid` int(11) DEFAULT NULL COMMENT 'entry id from brewing table',
 			`bid` int(11) DEFAULT NULL COMMENT 'brewer id from brewer table',
-			`scoreEntry` varchar(3) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-			`scorePlace` varchar(3) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-			`scoreType` char(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+			`scoreEntry` int(11) DEFAULT NULL COMMENT 'numerical score assigned by judges',
+			`scorePlace` float DEFAULT NULL COMMENT 'place of entry as assigned by judges',
+			`scoreType` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT 'type of entry used for custom stylesr',
 			PRIMARY KEY (`id`)
 		) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 		";
