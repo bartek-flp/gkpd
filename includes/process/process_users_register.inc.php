@@ -466,7 +466,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 					if (isset($brewerClubs)) $message .= sprintf("<tr><td valign='top'><strong>%s:</strong></td><td valign='top'>%s</td></tr>",$label_club,$brewerClubs);
 					if (isset($brewerAHA)) $message .= sprintf("<tr><td valign='top'><strong>%s:</strong></td><td valign='top'>%s</td></tr>",$label_aha_number,$brewerAHA);
 					if (isset($_POST['brewerStaff']))$message .= sprintf("<tr><td valign='top'><strong>%s:</strong></td><td valign='top'>%s</td></tr>",$label_staff,$brewerStaff);
-					if (isset($_POST['brewerJudge'])) $message .= sprintf("<tr><td valign='top'><strong>%s:</strong></td><td valign='top'>%s<br>%s</td></tr>",$label_judge,$brewerJudge, "obowiązkowa obecność dla wszystkich sędziów w piątek 20.10 o godz. 13:00 w Warszawie, ul. Czerniakowska 126 a lok. 4");
+					if (isset($_POST['brewerJudge'])) $message .= sprintf("<tr><td valign='top'><strong>%s:</strong></td><td valign='top'>%s<br>%s</td></tr>",$label_judge,$brewerJudge);
 					if (isset($_POST['brewerSteward'])) $message .= sprintf("<tr><td valign='top'><strong>%s:</strong></td><td valign='top'>%s</td></tr>",$label_steward,$brewerSteward);
 					
 				}
